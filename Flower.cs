@@ -27,14 +27,14 @@ namespace FlowerMap
         {
             Il2CppAssetBundle bundle = LoadBundle("FlowerMap.Resources.flower");
             MelonLogger.Msg($"Loaded Bundle, yay");
-            arena = GameObject.Instantiate(bundle.LoadAsset<GameObject>("MapParent"));
+            arena = GameObject.Instantiate(bundle.LoadAsset<GameObject>("Flower"));
             MelonLogger.Msg($"Loaded Map Asset");
             arena.transform.SetParent(mapParent.transform);
             MelonLogger.Msg($"Set Parent Transform");
 
             HostPedestal.SetFirstSequence(arena.transform.FindChild("Positions").transform.GetChild(0).position);
             MelonLogger.Msg($"Set Host First Sequence");
-            ClientPedestal.SetFirstSequence(arena.transform.FindChild("Positions").transform.GetChild(0).position);
+            ClientPedestal.SetFirstSequence(arena.transform.FindChild("Positions").transform.GetChild(1).position);
             MelonLogger.Msg($"Set Client First Sequence");
 
         }
